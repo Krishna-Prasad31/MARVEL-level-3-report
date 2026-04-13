@@ -30,6 +30,6 @@ For this task i created a chat application using AWS Lambda and API gateway serv
 
 ![website](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(665).png?raw=true)
 ![website](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/AWS1.png?raw=true)
-![website](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(741).png?raw=true)
+![website](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/AWS2.png?raw=true)
 ![website](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(739).png?raw=true)
   
