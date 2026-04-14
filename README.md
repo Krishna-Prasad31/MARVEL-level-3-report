@@ -363,3 +363,64 @@ Then, I created a Dockerfile for my backend application:
 
 After that, I built the Docker image and then I ran a MongoDB container and also created a volume so that my data would not be lost, Finally, I ran my backend container and connected it to the same network
 ![docker](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(805).png?raw=true)
+
+
+# TASK 9: Hashing
+
+Hashing is a technique used to convert data (like a password) into a fixed-length string of characters, called a hash. You can think of it like a fingerprint for your data — every input produces a unique output.
+
+For example, if I hash the password:
+`hello123`
+
+I might get something like: `ef92b778bafe771e89245b89ecbc...`
+
+The same input will always produce the same hash. But even a tiny change (like hello124) will produce a completely different hash
+So instead of storing the actual password, systems store the hash, and during login they compare hashes instead of raw passwords.
+
+## Hashing vs Encryption:
+![hashing](https://miro.medium.com/v2/resize:fit:1400/1*8uhYhVj4xDnKZ3clEYMKSA.png)
+
+Hashing functions are designed to be one-way functions. It is easy to generate a hash from input, but extremely hard (practically impossible) to reverse it. There is no “decrypt hash” function. The only way to guess the original password is to try inputs and compare hashes, which is computationally expensive.
+
+## Collision:
+A collision happens when two different inputs produce the same hash.
+
+for example:
+
+- input1 → hash X  
+- input2 → hash X
+
+This is rare in strong hashing algorithms (like SHA-256), but theoretically possible.
+
+Good hashing algorithms are designed to:
+- Minimize collisions
+- Make them extremely difficult to find
+
+ # Rainbow Tables & Dictionary Attacks
+
+Even though hashes cannot be reversed directly, attackers use tricks:
+
+1. Dictionary Attack
+
+They take a list of common passwords like:
+
+- 123456, password, admin, qwerty
+
+Hash them, and compare with stolen hashes.
+
+2. Rainbow Tables
+
+These are precomputed databases of passwords and their hashes.
+Instead of calculating hashes every time, attackers just look them up.
+
+We can prevent this by :
+
+### Salting
+Salting is a method used to improve password security by adding a random string (called a salt) to the password before hashing it. This ensures that even if two users have the same password, their hashes will be different. It also protects against rainbow table attacks, since attackers cannot rely on precomputed hashes. The salt is usually stored along with the hashed password and does not need to be kept secret.
+
+### Peppering
+Peppering is similar to salting, but the key difference is that the pepper is kept secret. It is a fixed value added to the password before hashing, but it is not stored in the database. Instead, it is stored securely in the application. This means that even if the database is compromised, attackers cannot easily crack the passwords without knowing the pepper, making the system more secure.
+
+this is the program I created to hash passwords, it uses `hashlib` and SHA256 as cryptic function used to generate fixed size 256-bit data. Here the user can register and input the password and can login using those credentials. the hashed password will get stored in a json file.
+![hashing](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(806).png?raw=true)
+![hashing](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(808).png?raw=true)
