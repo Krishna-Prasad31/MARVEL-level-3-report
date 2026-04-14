@@ -144,3 +144,99 @@ Allows remote login to Windows , Huge attack surface: Brute force, Credential at
 ![website](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/WhatsApp%20Image%202026-04-14%20at%2012.40.27.jpeg?raw=true)
 ![website](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/WhatsApp%20Image%202026-04-14%20at%2012.40.27%20(1).jpeg?raw=true)
 
+# TASK 5: Wireshark
+
+Wireshark is a network packet analyzer used to capture, inspect, and troubleshoot data being transmitted across a network. It allows users to monitor traffic over different network interfaces such as Wi-Fi and Ethernet.
+
+Wireshark provides detailed insights into how data flows across a network and how different protocols operate.
+
+## 2. Working of Wireshark
+
+To verify that Wireshark is functioning correctly:
+
+- Start packet capture  
+- Open a web browser and search for any website  
+- Observe packets being captured in real time  
+
+This confirms that network traffic is being monitored successfully.
+
+## 3. Filters in Wireshark
+
+Filters are essential for efficient packet analysis.
+
+### Capture Filters
+- Applied before capturing packets  
+- Capture only specific traffic  
+
+### Display Filters
+- Applied after capturing packets  
+- Hide unwanted packets and show relevant ones  
+
+### Examples
+tcp
+dns
+ip.addr == 192.168.56.1
+
+
+### Logical Operators
+- AND  
+- OR  
+- NOT (`!=`)  
+
+## 4. Important Features in Wireshark
+
+### Statistics Menu
+Used to analyze traffic patterns:
+
+- Capture summary  
+- Conversations  
+- Endpoints  
+- Packet lengths  
+
+### Flow Graph
+- Visual representation of packet communication  
+- Helps understand request-response flow  
+
+### TCP Stream Graphs
+Used to analyze:
+- Latency  
+- Throughput  
+- Packet behavior  
+
+
+## 5. Key Networking Concepts
+
+### DHCP (Dynamic Host Configuration Protocol)
+- Assigns IP addresses dynamically to devices on a network  
+
+### TCP Three-Way Handshake
+
+- Client → SYN → Server
+- Server → SYN,ACK → Client
+- Client → ACK → Server
+
+
+Establishes a reliable connection between client and server.
+
+### Connection Reset (RST Packet)
+
+- If the server sends an **RST (Reset)** packet  
+- It indicates that the connection has failed or was rejected
+  
+## 6. Observations
+
+- Network traffic was successfully captured using Wireshark  
+- Filters helped isolate specific protocols  
+- TCP communication patterns were observed  
+- Three-way handshake process was identified  
+- RST packets indicated failed or rejected connections  
+- Retransmissions and duplicate acknowledgments may indicate packet loss or congestion
+
+## 7. Conclusion
+
+Wireshark is a powerful tool for analyzing network traffic and understanding communication between systems. It helps in identifying network issues, analyzing protocols, and detecting anomalies in packet flow.
+
+![wireshark](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/WhatsApp%20Image%202026-04-14%20at%2015.11.58.jpeg?raw=true)
+![wireshark](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/WhatsApp%20Image%202026-04-14%20at%2015.27.28.jpeg?raw=true)
+![wireshark](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/WhatsApp%20Image%202026-04-14%20at%2015.27.29%20(2).jpeg?raw=true)
+![wireshark](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/WhatsApp%20Image%202026-04-14%20at%2015.27.29.jpeg?raw=true)
