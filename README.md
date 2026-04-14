@@ -425,7 +425,7 @@ this is the program I created to hash passwords, it uses `hashlib` and SHA256 as
 ![hashing](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(806).png?raw=true)
 ![hashing](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(808).png?raw=true)
 
-## Task 8: Webscraping flight ticket prices
+# Task 8: Webscraping flight ticket prices
 
 Web scraping is a technique used to extract data from websites automatically. Modern websites like Kayak use dynamic content loading and interactive user interfaces, which makes data extraction more complex than simple static HTML parsing.
 
@@ -476,3 +476,85 @@ For this task i tried scraping for flights from Bengaluru to Los Angeles.
 ![scraping](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(809).png?raw=true)
 ![scraping](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(810).png?raw=true)
 ![scraping](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/WhatsApp%20Image%202026-04-14%20at%2021.53.59.jpeg?raw=true)
+
+# TASK 3: SSH
+
+Secure Shell (SSH) is a network communication protocol that enables secure remote access between systems. It uses encryption to protect data transfer and allows users to execute commands on remote machines.
+
+The objective of this task is to understand SSH communication, identify sensitive key files on a system, and transfer them securely between servers.
+
+## Tools and Technologies Used
+- Docker (to simulate servers)
+- Ubuntu (base container image)
+- SSH (Secure Shell)
+- SCP (Secure Copy Protocol)
+- Linux Commands (find, scp, ssh)
+
+Two Docker containers were created to simulate two independent servers:
+
+- Server A → Source server (contains key files)
+- Server B → Destination server (receives files)
+
+Both containers were connected using a custom Docker network to enable communication between them.
+
+SSH was installed and configured on both servers to allow remote access.
+
+- Firstly I created two docker containers
+  `docker run -dit --name serverA` 
+  
+`docker run -dit --name serverB ubuntu`
+
+- Then installed and started SSH
+
+`apt update`
+
+`apt install -y openssh-server`
+
+`service ssh start`
+
+- Generated SSH Keys in serverA:
+
+  `mkdir -p /home/keys`
+
+  
+`ssh-keygen -t rsa -f /home/keys/id_rsa_test -N "" `
+
+This created:
+
+- Private key → /home/keys/id_rsa_test
+- Public key → /home/keys/id_rsa_test.pub
+
+- Searched Entire System for Keys
+
+  `find / -type f \( -name "id_rsa*" -o -name "*.pem" -o -name "*.pub" \) 2>/dev/null`
+
+- Configuring SSH Authentication (Server B)
+
+The SSH configuration file was modified:
+
+`nano /etc/ssh/sshd_config`
+
+Changes made:
+
+- PermitRootLogin yes
+- PasswordAuthentication yes
+
+Then SSH service was restarted:
+
+`service ssh restart`
+
+- Transferring Keys Using SCP
+
+  
+`scp /home/keys/id_rsa_test root@serverB:/home/`
+
+
+
+Finally SSH connection successfully established between servers and key files were identified using the find command. File transfer using SCP was successfully completed, the transferred file was verified on Server B
+
+This task successfully demonstrated secure communication between two servers using SSH. It also highlighted how sensitive key files can be discovered and transferred across systems. The exercise provided practical knowledge of system security, file handling, and debugging in a controlled environment.
+
+![ssh](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(815).png?raw=true)
+![ssh](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(816).png?raw=true)
+![ssh](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(818).png?raw=true)
+![ssh](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(825).png?raw=true)
