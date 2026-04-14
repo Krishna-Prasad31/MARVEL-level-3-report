@@ -424,3 +424,55 @@ Peppering is similar to salting, but the key difference is that the pepper is ke
 this is the program I created to hash passwords, it uses `hashlib` and SHA256 as cryptic function used to generate fixed size 256-bit data. Here the user can register and input the password and can login using those credentials. the hashed password will get stored in a json file.
 ![hashing](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(806).png?raw=true)
 ![hashing](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(808).png?raw=true)
+
+## Task 8: Webscraping flight ticket prices
+
+Web scraping is a technique used to extract data from websites automatically. Modern websites like Kayak use dynamic content loading and interactive user interfaces, which makes data extraction more complex than simple static HTML parsing.
+
+For this task I built a program that automatically searches for flights on Kayak and extracts relevant flight data then stores the data in a structured format and finally automatically sends the results via email
+
+From this task I learnt how selenium works and how it helps in automation of actions in a website which we can see in realtime , in addition to that I understood how to fine tune the program to execute with minimal failures. Got a good understanding of how the data is converted into a csv and sent to email addresses.
+
+In this task I faced some challenges such as some class names were not reliable and the date selector was not working correctly. I countered the problems by understanding the DOM clearly and started using label instead of classed.
+
+## What is Selenium?
+
+Selenium is an open-source automation tool used to control web browsers programmatically.
+
+It allows developers to:
+
+- Open websites
+- Click buttons
+- Fill forms
+- Navigate pages
+- Extract data
+
+In this project, Selenium is used to simulate real user interaction with the Kayak website.
+
+## Working of Selenium:
+
+1. Python code sends commands
+2. Selenium WebDriver translates them
+3. ChromeDriver communicates with the browser
+4. Browser executes actions
+5. Response is returned back
+
+`driver.find_element(By.XPATH, "//button").click()`
+
+Tools used:
+
+| Tool               | Purpose                   |
+| ------------------ | ------------------------- |
+| Python             | Programming language      |
+| Selenium           | Browser automation        |
+| ChromeDriver       | WebDriver for Chrome      |
+| CSV module         | Data storage              |
+| SMTP (smtplib)     | Email automation          |
+| DevTools (Inspect) | DOM analysis              |
+
+For this task i tried scraping for flights from Bengaluru to Los Angeles.
+
+
+![scraping](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(809).png?raw=true)
+![scraping](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(810).png?raw=true)
+![scraping](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/WhatsApp%20Image%202026-04-14%20at%2021.53.59.jpeg?raw=true)
