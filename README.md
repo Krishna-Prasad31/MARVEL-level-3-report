@@ -1,4 +1,4 @@
-# MARVEL-level-3-report
+# MARVEL-level-2-report
 
 # Task1: AWS Lambda:
 AWS Lambda is one of many services provided by Amazon Web Services. Using Lambda developers can execute code without needing to provision or manage servers. It follows and event driven architechure, where fucntions(Lambda function) are triggered in response to specific events such as HTTP request, file upload , database updates, etc...AWS Lambda is a Function-as-a-Service (FaaS) platform.
