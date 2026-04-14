@@ -54,3 +54,38 @@ Finally when the CI part was sorted the CD automatically deployed it in vercel a
 ![Jenkins](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(763).png?raw=true)
 ![Jenkins](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(762).png?raw=true)
 ![Jenkins](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(764).png?raw=true)
+
+
+# TASK 4: Terraform
+
+Terraform is an open-source Infrastructure as Code (IaC) tool developed by HashiCorp. It enables users to define, provision, and manage infrastructure using a declarative configuration language.
+
+Instead of manually creating resources through cloud consoles, Terraform allows automation using code. This improves consistency, reduces human error, and enables easy and hassle free collaboration within a team. Terraform interacts with cloud providers such as **AWS, Google Cloud, Microsoft Azure, etc...**. Terraform connects to the cloud providers through API making it highly flexible and platform independent.
+
+## Flow of Terraform Execution:
+
+The process begins by defining infrastructure using Terraform configuration files (.tf files).
+
+- `terraform.tf` → Defines required providers and Terraform settings
+- `main.tf` → Contains infrastructure (VPC, subnets, EC2, etc.)
+- `variables.tf` → Stores input variables
+- `outputs.tf` → Defines output values
+
+These files collectively describe the desired state of the infrastructure.
+
+### commands used:
+
+`terraform init`: During initialization Terraform downloads the AWS provider from HashiCorp registry Required modules (like VPC module) are installed Backend (local or cloud) is configured. This step prepares Terraform to interact with Amazon Web Services APIs.
+
+`terraform validate`: This checks the for logical errors in the code, checks syntax and ensures the code runs errorless before execution.
+
+`terraform plan`: Here Terraform Reads configuration files and compares with current state (terraform.tfstate) and finally Generates an execution plan.
+
+Eg: creating VPC, subnets or creating EC2 instance
+
+`terraform apply`: This is the execution phase .Terraform sends API requests to AWS , AWS provisions resources (VPC, subnets, etc.) A state file (terraform.tfstate) is updated. This is wher infrastructure goes live. Whenever you modify the configuration this command must me used to update the changes.
+
+`terraform destroy`: Terraform reads the state file and identifies all managed resources then sends delete requests to AWS. finally after the command is ran the  created infrastructure is removed.
+
+![terraform](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(611).png?raw=true)
+![terraform](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(617).png?raw=true)
