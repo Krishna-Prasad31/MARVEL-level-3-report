@@ -240,3 +240,92 @@ Wireshark is a powerful tool for analyzing network traffic and understanding com
 ![wireshark](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/WhatsApp%20Image%202026-04-14%20at%2015.27.28.jpeg?raw=true)
 ![wireshark](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/WhatsApp%20Image%202026-04-14%20at%2015.27.29%20(2).jpeg?raw=true)
 ![wireshark](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/WhatsApp%20Image%202026-04-14%20at%2015.27.29.jpeg?raw=true)
+
+# TASK 6: Docker
+
+Docker is an open-source containerization platform that enables applications to be packaged along with their dependencies into lightweight containers. These containers ensure that applications run consistently across different environments such as local machines, cloud platforms, and distributed systems.
+
+Unlike traditional virtual machines, Docker containers share the host operating system, making them faster, more efficient, and lightweight.
+
+
+## Flow of Docker Execution:
+
+The process of using Docker follows a simple workflow:
+
+![docker](https://editor.analyticsvidhya.com/uploads/40489Capture.PNG)
+
+## Key concpets:
+
+### Container:
+A container is a lightweight and portable environment that runs an application along with its dependencies.
+
+### Image:
+A Docker image is a read only, pre-packaged template that contains an application along with all its dependencies, libraries, and environment needed to run it, and is used to create containers.
+
+### Dockerfile:
+A Dockerfile is a script that contains instructions to build a Docker image.
+
+### Docker Hub:
+Docker Hub is an online repository used to store and share Docker images.
+
+### Docker Volume:
+A Docker volume is a way to store data outside a container so that the data is not lost when the container stops or is deleted.
+
+### Docker daemon:
+A Docker daemon is the background service that manages Docker containers, images, networks, and volumes, and handles all Docker operations on the system.
+
+## Virtual Machines (VMs) also provide isolated environments similar to Docker containers. Why should we choose Docker over Virtual Machines?
+
+Although both Virtual Machines and Docker containers provide isolated environments, Docker is generally preferred due to its efficiency, speed, and lightweight nature.
+Virtual Machines run a complete operating system along with the application, which makes them heavy, slower to start, and resource-intensive. Each VM requires its own OS, memory, and storage, leading to higher overhead.
+In contrast, Docker containers share the host operating system kernel and only include the application and its dependencies. This makes containers lightweight, faster to start, and more efficient in resource utilization.
+Additionally, Docker enables faster deployment and scalability, allowing multiple containers to run on the same system with minimal overhead. This is especially useful in modern DevOps and cloud environments.
+However, Virtual Machines provide stronger isolation since each VM has its own OS, making them more suitable for scenarios requiring high security and complete system isolation.
+![docker](https://k21academy.com/wp-content/uploads/2020/11/Docker-and-Vm-blog-image-1_result-1.webp)
+
+## Docker commands
+
+- `docker pull <image>`  : Download an image from Docker Hub  
+
+- `docker images` : List all downloaded images  
+
+- `docker rmi <image_id>` : Remove an image  
+
+- `docker run <image>`  : Create and run a container  
+
+  `docker run -d <image>`  : Run container in background (detached mode)  
+
+- `docker run -p <host_port>:<container_port> <image>` : Run container with port mapping  
+
+- `docker ps` : List running containers  
+
+- `docker ps -a` : List all containers (including stopped ones)  
+
+- `docker stop <container_id>` : Stop a running container  
+
+- `docker start <container_id>` : Start a stopped container  
+
+- `docker restart <container_id>` : Restart a container  
+
+- `docker rm <container_id>` : Remove a container  
+
+- `docker build -t <image_name> .` : Build an image from a Dockerfile  
+
+- `docker tag <image> <new_name>` : Tag/rename an image  
+
+- `docker logs <container_id>` : View container logs  
+
+- `docker exec -it <container_id> bash`  : Access container terminal  
+
+- `docker inspect <container_id>` : View detailed container information  
+
+- `docker port <container_id>` : Show port mappings
+  
+- `docker volume create <name>` : Create a volume  
+
+- `docker volume ls` : List volumes  
+
+- `docker volume rm <name>`  : Remove a volume
+
+  ![docker](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%202026-04-14%20164211.png?raw=true)
+  ![docker](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(772).png?raw=true)
