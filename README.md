@@ -89,3 +89,58 @@ Eg: creating VPC, subnets or creating EC2 instance
 
 ![terraform](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(611).png?raw=true)
 ![terraform](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(617).png?raw=true)
+
+# TASK 10: NMap
+
+Nmap (Network Mapper) is an open-source tool used for network discovery and security auditing. It is widely used by system administrators and cybersecurity professionals to identify active hosts, open ports, services, and operating systems in a network. Nmap works by sending specially crafted data packets to see how target systems respond and analyse the data received.
+
+For this task I logged into Kali Linux from the VirtualBox. I pentesed the host windows system, to make the virtual machine a distinct machine from windows i selected the network adapter to bridged adapter. Then I opened the Linux terminal(command line) and started pentesting on the ip of the windows system.
+
+Fristly I tried to check check if the host is alive or responding, for this purpose I used `ping <ip address>`. This command ran successfully and we can see that the target IP is responding.
+![nmap](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/WhatsApp%20Image%202026-04-14%20at%2012.40.29.jpeg?raw=true)
+
+for port scanning I used `nmap -sS -T4 192.168.56.1`. This performs a SYN(stealth) scan and -T4 is used for faster execution. Ports are of three states based on the response of the target IP
+
+If it replies
+- SYN-ACK - Open port
+- RST - Closed port
+- null - filtered ports
+
+open ports actively accept connections, A closed port is reachable BUT no service is listening and A filtered port is being blocked by a firewall.
+
+I used `nmap -sV 192.168.56.1` for service detection. By running this command I could clearly identify services running on open ports and detect service versions
+
+Some important PORTS are:
+
+## 445 : SMB 
+
+These are big targets
+
+File sharing, Network communication, Historically vulnerable (e.g., EternalBlue)
+
+This is usually the first thing pentesters look at.
+
+## 3306 : MySQL
+
+This means:
+
+A database server is running
+Might allow: Weak passwords and remote access
+
+## 3389 : RDP
+
+Remote Desktop Protocol
+
+Allows remote login to Windows , Huge attack surface: Brute force, Credential attacks
+
+![nmap](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/nmap2.jpeg?raw=true)
+
+## Observation
+- SMB (445) was open but did not reveal data due to authentication
+- RPC (135) available for communication
+- NetBIOS (139) exposed legacy services
+- HTTP API (3380) identified as potential entry point
+
+![website](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/WhatsApp%20Image%202026-04-14%20at%2012.40.27.jpeg?raw=true)
+![website](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/WhatsApp%20Image%202026-04-14%20at%2012.40.27%20(1).jpeg?raw=true)
+
