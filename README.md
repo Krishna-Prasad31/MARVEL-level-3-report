@@ -329,3 +329,37 @@ However, Virtual Machines provide stronger isolation since each VM has its own O
 
   ![docker](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%202026-04-14%20164211.png?raw=true)
   ![docker](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(772).png?raw=true)
+
+# TASK 7: Dockerize
+
+## Aim  
+Dockerizing an application is the process of packaging the application along with all its dependencies, configurations, and runtime environment into a container image, so that it can run consistently across different systems.
+
+Dockerizing an application can be compared to packing a complete travel suitcase before going on a trip. Instead of relying on the destination to provide everything you need, you pack all essentials—clothes, charger, documents—into one suitcase so you’re fully prepared wherever you go
+
+ 
+In this task, I created a Dockerfile for the backend, ran a database container, connected both using a bridge network, and used volumes for storing data.
+
+### Bridge Network:
+
+A bridge network in Docker is the default network driver that allows multiple containers to communicate with each other on the same host. It creates a private internal network where containers can interact using IP addresses or container names. Containers connected to a bridge network are isolated from external networks unless explicitly exposed through port mapping.
+
+### Volumes:
+
+A Docker volume is a persistent storage mechanism used to store and manage data independently of containers. Volumes are managed by Docker and exist outside the container’s filesystem, ensuring that data is retained even if the container is stopped, removed, or recreated. They are commonly used for databases, user data, and application state.
+
+### Storage:
+
+Container storage refers to the data stored within a container’s writable layer. This storage is temporary and tied to the lifecycle of the container, meaning any data stored inside the container is lost when the container is deleted. It is suitable for short-term or non-critical data, while persistent data should be stored using volumes or external storage.
+ 
+
+
+First, I created a custom bridge network so that my containers could communicate with each other:
+![docker](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(773).png?raw=true)
+
+
+Then, I created a Dockerfile for my backend application:
+![docker](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(800).png?raw=true)
+
+After that, I built the Docker image and then I ran a MongoDB container and also created a volume so that my data would not be lost, Finally, I ran my backend container and connected it to the same network
+![docker](https://github.com/Krishna-Prasad31/MARVEL-level-3-report/blob/main/Screenshot%20(805).png?raw=true)
