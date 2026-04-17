@@ -47,7 +47,7 @@ GitHub Repository → Jenkins Pipeline → Docker (Node Environment) → Build �
 
 I pulled Jenkins using docker through WSL and required plugins such as Docker Pipeline were installed. Once the setup was completed I was able to open Jenkins. It was accessed through *localhost*. After creating my account I created a new pipeline and started writing the pipeline script. Once I completed the scripting part I ran the build , i ran into some errors before the build finally passed successfully. I learnt a lot of new things from failed builds and understood by reading the output terminal.
 
-Finally when the CI part was sorted the CD automatically deployed it in vercel and the webapp was up and running.
+Finally when the CI part was sorted the CD automatically deployed it on vercel and the webapp was up and running.
 
 [Tenzies](https://tenzies-cici2qxkw-krishna-prasad31s-projects.vercel.app/)
 
