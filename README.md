@@ -389,8 +389,8 @@ A collision happens when two different inputs produce the same hash.
 
 for example:
 
-- input1 → hash X  
-- input2 → hash X
+- input1 : hash X  
+- input2 : hash X
 
 This is rare in strong hashing algorithms (like SHA-256), but theoretically possible.
 
